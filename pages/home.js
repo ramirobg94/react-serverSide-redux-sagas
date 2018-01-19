@@ -23,13 +23,13 @@ const HomePage = (props) =>
 	    name="go" className="btn btn-lg btn-primary btn-block" 
 	    onClick={()=> props.setValueAsync()}
 	>
-		incrementAsync
+		resetAsync
 	</button>
 	 <button id="submit" type="submit" 
 	    name="go" className="btn btn-lg btn-primary btn-block" 
-	    onClick={()=> props.setValue(8)}
+	    onClick={()=> props.setValue(Math.random()*100)}
 	>
-		increment
+		random
 	</button>
 	<h1>Value: {props.value}</h1>
   </div>
@@ -41,7 +41,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-	setValueAsync: () => { dispatch(setValueAsync(3)); },
+	setValueAsync: () => { dispatch(setValueAsync(0)); },
 	setValue: (value) => { dispatch(setValue(value)); }
 });
 
